@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block title %} Home{% endblock %}
+{% block content %} 
+<section class="containerr">
+    <div class="containerr2">
+        {% for post in posts%}
+        <div class="cardd position-relative">
+            <p class="fr font-monospace fw-bold fs-3" style="padding-top: 6px; margin-bottom:0px; padding-bottom:0px; ">@{{post.author}}</p>
+            <span class="font-monospace fw-bold" style="padding-left:6px;">Date : {{post.created_at}}</span>
+            <div class="cardd-image "><img class="cardd-image" src="{{post.photo.url}}" alt="No image"></div>
+            <h3 class=" fw-semibold">{{post.title}}</h3>
+            <p >{{post.description}}</p>
+            <!-- <a href="">READ MORE</a> -->
+            {% if request.user == post.author %}
+            <a class="btn btn-warning position-absolute bottom-0 start-0 "  href="{% url 'update' post.id %}" >Update</a>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger position-absolute bottom-0 end-0 " name="post_id" value="{{ post.id }}">Delete</button>
+            </form>
+            {% endif %}
+        </div>
+        {%endfor%}
+    </div>
+</section>
+{% endblock %}

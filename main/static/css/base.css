@@ -1,0 +1,262 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: sans-serif;
+  }
+  nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  .as {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+    font-size: 20px;
+  }
+  .button.secondary {
+    border-bottom: 1px #444 solid;
+  }
+  
+  /* Mobile menu */
+  .men {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+  
+  /* Navbar Toggle */
+  .toggle {
+    cursor:pointer;
+  }
+  .bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  .bars:before,
+  .bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .bars:before {
+    top: 5px;
+  }
+  .bars:after {
+    top: -5px;
+  }
+  
+  /* Tablet menu */
+  @media all and (min-width: 468px) {
+    .men {
+        justify-content: center;
+    }
+  
+    .logo {
+        flex: 1;
+    }
+  
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+        border-radius:50em;
+    }
+    .button.secondary a {
+        background: transparent;    
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition:all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    } 
+  }
+  
+  /* Desktop menu */
+  @media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .men li {
+        padding: 15px 10px;
+    }
+    .men li.button {
+        padding-right: 0;
+    }
+  }
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* body{
+    background-color: rgb(27,27,27);
+} */
+.containerr{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.containerr2{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 950px;
+}
+.cardd{
+    background: rgb(225, 237, 244);
+    width: 290px;
+    height: 510px;
+    margin: 10px;
+    margin-top: 30px;
+    border-radius: 15px;
+    border: solid 1px;
+    border-color: #222;
+}
+.cardd-image{
+    background-color: aqua;
+    height: 180px;
+    width: 289px;
+    margin-bottom: 15px ;
+    background-size: cover;
+    /* border-radius: 15px 15px 0 0; */
+}
+/* .cardd-1{
+    background-image: url("https://images.unsplash.com/photo-1583267746897-2cf415887172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXV0b21vYmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80");
+}
+.card-2{
+    background-image: url("https://www.focus2move.com/wp-content/uploads/2021/02/Bugatti-Divo_Lady_Bug-2020-1024-0b.jpg");
+}
+.card-3{
+    background-image: url("https://media.architecturaldigest.com/photos/5ced629704c41e1a9b9a8bcf/3:2/w_2532,h_1688,c_limit/Bugatti-LVN-7%20%5BBugatti%5D.jpg");
+} */
+.cardd:hover h2{
+    padding: 10px;
+}
+.cardd p {
+    padding: 2px;
+    padding-left: 6px;
+}
+.cardd h3 {
+  padding-left: 6px;
+}
+.cardd a{
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+    border-radius: 15px;
+}
+.cardd:hover{
+    background-color: rgb(62,62,62);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 0.8 ease;
+}
+.external{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #444;
+  margin-top: 50px;
+}
+.internal{
+  /* display: flex; */
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(75, 136, 180);
+}
+
+.d{
+  height: 30px;
+  background-color: red;
+}
+.c{
+  border: 3px solid;
+}
+
+
+
+
+
+
+
+
+
+

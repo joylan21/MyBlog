@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    {% block navbar%}
+    <nav>
+        <ul class="men">
+            <li class="logo" ><a style="color: white; text-decoration:none; " href="#">BlogApp</a></li>
+            <li class="item"><a class="as" href="{% url 'home' %}">Public Posts</a></li>
+            <li class="item"><a style="color: white; text-decoration:none; " href="#">|</a></li>
+            <li class="item"><a class="as" href="{% url 'createpost' %}">Create Post</a>
+            <li class="item"><a style="color: white; text-decoration:none; " href="#">|</a></li>
+            <li class="item"><a class="as" href="{% url 'myposts' %}">My Posts</a>
+            </li></li>
+            {% if user.is_authenticated %}
+            <li class="item button secondary"><a class="as" href="/logout/">Log Out</a></li>
+            {% else %}
+            <li class="item button"><a class="as" href="{% url 'login' %}">Log In</a></li>
+            <li class="item button secondary"><a class="as" href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
+            <li class="toggle"><span class="bars"></span></li>
+        </ul>
+    </nav>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
